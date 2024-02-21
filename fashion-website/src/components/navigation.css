@@ -1,0 +1,13 @@
+.navigation-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    height: 50px;
+    color: white;
+  }
+  
+  .topicBox {
+    cursor: pointer;
+  }
+  
