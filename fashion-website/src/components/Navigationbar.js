@@ -17,7 +17,7 @@ export default function Navigationbar() {
         <span>Kids</span>
       </div>
       <div className='topicBox'>
-        <span>wishlist</span>
+        <span>Wishlist</span>
       </div>
       <div className='topicBox'>
         <span>Cart</span>
