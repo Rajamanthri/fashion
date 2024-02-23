@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "fashion",
   "version": "0.1.0",
   "private": true,
@@ -35,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+=======
+  "dependencies": {
+    "react-router-dom": "^6.22.1"
+>>>>>>> 4a3490dfad30470d7f1d4ee08bef863cad5aef01
   }
 }
