@@ -15,11 +15,17 @@ public class UserController {
     @Autowired
     private UserService userService;
     @PostMapping("/saveUser")
-    public UserDTO saveUser(@RequestBody UserDTO userDTO) {
-        return userService.saveUser(userDTO);
+    public String saveUser(@RequestBody UserDTO userDTO) {
+         userService.saveUser(userDTO);
+         return "User Saved";
     }
     @GetMapping("/getUser")
     public List<UserDTO> getUser() {
         return userService.getAllUsers();
+    }
+    @PutMapping("/update")
+    public String updateUsers(@RequestBody UserDTO userDTO){
+        userService.updateUsers(userDTO);
+        return "User Updated";
     }
 }

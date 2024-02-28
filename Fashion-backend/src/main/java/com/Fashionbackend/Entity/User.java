@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
     @Id
-    
+
     private int id;
     private String f_Name;
     private String l_Name;
