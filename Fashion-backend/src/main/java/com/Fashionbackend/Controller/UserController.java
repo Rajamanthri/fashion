@@ -5,14 +5,21 @@ import com.Fashionbackend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value="api/v1/user")
 @CrossOrigin
 public class UserController {
+
     @Autowired
     private UserService userService;
     @PostMapping("/saveUser")
     public UserDTO saveUser(@RequestBody UserDTO userDTO) {
         return userService.saveUser(userDTO);
+    }
+    @GetMapping("/getUser")
+    public List<UserDTO> getUser() {
+        return userService.getAllUsers();
     }
 }
