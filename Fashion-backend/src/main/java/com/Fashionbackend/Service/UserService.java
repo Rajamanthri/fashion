@@ -28,4 +28,13 @@ public class UserService {
         return modelMapper.map(userList,new TypeToken<List<UserDTO>>(){}.getType());
 
     }
+    public UserDTO updateUsers(UserDTO userDTO){
+        userRepo.save(modelMapper.map(userDTO,User.class));
+        return userDTO;
+    }
+
+    public boolean deleteUsers(UserDTO userDTO){
+        userRepo.delete(modelMapper.map(userDTO,User.class));
+        return true;
+    }
 }
