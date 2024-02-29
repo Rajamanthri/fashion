@@ -8,15 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class OrderDTO {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long oid;
-    private long pid;
+    private int oid;
+    private int pid;
     private String color;
     private String size;
     private int quantity;
