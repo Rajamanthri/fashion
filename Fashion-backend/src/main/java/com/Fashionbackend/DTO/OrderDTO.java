@@ -1,4 +1,4 @@
-package com.Fashionbackend.Entity;
+package com.Fashionbackend.DTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,14 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User {
+public class OrderDTO {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long oid;
+    private long pid;
+    private String color;
+    private String size;
+    private int quantity;
 
-    private int id;
-
-    private String f_Name;
-    private String l_Name;
-
-    private String email;
-    private String password;
 }

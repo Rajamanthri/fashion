@@ -16,8 +16,11 @@ public class UserController {
     private UserService userService;
     @PostMapping("/saveUser")
     public String saveUser(@RequestBody UserDTO userDTO) {
+
         userService.saveUser(userDTO);
         return "User Saved";
+
+
     }
     @GetMapping("/getUser")
     public List<UserDTO> getUser() {
@@ -35,3 +38,4 @@ public class UserController {
 
     }
 }
+
