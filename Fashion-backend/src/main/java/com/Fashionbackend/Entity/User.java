@@ -19,7 +19,7 @@ public class User {
 
     private String f_Name;
     private String l_Name;
-
+    private String role;
     private String email;
     private String password;
 }
