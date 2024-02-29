@@ -28,14 +28,8 @@ export default function Hero() {
     <div className='hero'>
 
       <div className="hero-left">
-        <h2>New arrivals only</h2>
-        <div>
-            <div className="hero-hand-icon">
-                <p>new</p>
-            </div>
-            <p>collection </p>
-            <p>for everyone</p>
-        </div>
+        <h2>Welcome to Wow Fashion!</h2>
+       
         <div className="hero-latest-btn">
             <div>Latest Collection</div>
         </div>
@@ -53,7 +47,6 @@ export default function Hero() {
             <h3>{item.itemName}</h3>
             <p>${item.price}</p>
             <button onClick={() => addToCart(item)}>Add to Cart</button>
-            {/* <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/kids'>Kids</Link>{menu==="kids"?<hr/>:<></>}</li> */}
           </div>
         ))}
       </div>

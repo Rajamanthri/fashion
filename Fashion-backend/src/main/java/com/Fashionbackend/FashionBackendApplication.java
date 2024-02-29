@@ -16,5 +16,9 @@ public class FashionBackendApplication {
 		}
 
 	}
+	@Bean
+	public ModelMapper modelMapper(){
+		return new ModelMapper();
+	}
 
 }

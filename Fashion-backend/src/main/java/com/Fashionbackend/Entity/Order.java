@@ -6,20 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Generated;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class User {
+public class Order {
     @Id
-
-    private int id;
-
-    private String f_Name;
-    private String l_Name;
-
-    private String email;
-    private String password;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long oid;
+    private long pid;
+    private String color;
+    private String size;
+    private int quantity;
 }
