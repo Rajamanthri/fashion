@@ -10,10 +10,7 @@ public class FashionBackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FashionBackendApplication.class, args);
-		@Bean
-        public ModelMapper modelMapper(){
-			return new ModelMapper();
-		}
+		
 
 	}
 	@Bean
