@@ -1,0 +1,12 @@
+import React from 'react'
+import './Item.css'
+
+export default function Item(props) {
+  return (
+    <div className='item'>
+      <img src={props.image} alt="" />
+      <p>{props.name}</p>
+      <p>{props.price}</p>
+    </div>
+  )
+}
