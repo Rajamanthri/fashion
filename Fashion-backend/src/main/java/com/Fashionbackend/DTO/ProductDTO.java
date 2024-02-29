@@ -1,21 +1,16 @@
-package com.Fashionbackend.Entity;
+package com.Fashionbackend.DTO;
 
-<<<<<<< Updated upstream
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-=======
-import jakarta.persistence.*;
->>>>>>> Stashed changes
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Product {
+public class ProductDTO {
     @Id
     private int pid;
 
