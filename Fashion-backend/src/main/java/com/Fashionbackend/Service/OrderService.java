@@ -1,11 +1,8 @@
 package com.Fashionbackend.Service;
 
 import com.Fashionbackend.DTO.OrderDTO;
-import com.Fashionbackend.DTO.UserDTO;
 import com.Fashionbackend.Entity.Order;
-import com.Fashionbackend.Entity.User;
 import com.Fashionbackend.Repo.OrderRepo;
-import com.Fashionbackend.Repo.UserRepo;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;

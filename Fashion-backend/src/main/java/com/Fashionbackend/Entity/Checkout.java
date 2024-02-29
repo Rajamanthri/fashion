@@ -7,14 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class Order {
+public class Checkout {
     @Id
-    private int oid;
-    private int pid;
-    private String color;
-    private String size;
-    private int quantity;
+    private int Cid;
+    private String address;
+    private int mobile;
+    private String ShippingMethod;
+
 }
