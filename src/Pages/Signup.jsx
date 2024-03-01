@@ -2,6 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CSS/Signup.css';
 
+const [user,setUser]=useState({
+  
+})
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -11,9 +14,11 @@ const Signup = () => {
       <div className="signup-container">
         <h1>Sign Up</h1>
         <div className="signup-fields">
-          <input type="text" placeholder="Your Name" />
+          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="Last Name" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
+          
         </div>
         <button>Sign Up</button>
         <p className="signup-login">
