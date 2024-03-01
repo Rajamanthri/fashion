@@ -58,17 +58,21 @@ const Navbar = () => {
       </ul>
 
       <div className="nav-actions">
+        <div className="wc">
         <div className="wishlist">
           <Link to='/wishlist'><FontAwesomeIcon icon={faHeart} /></Link>
           <div className="wishlist-count">0</div>
         </div>
-
-        <div className="nav-login-cart">
-          <Link to='/login'><button>Login</button></Link>
-          <div className="cart-icon-container">
+        <div className="cart-icon-container">
             <Link to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></Link>
             <div className="nav-cart-count">0</div>
           </div>
+        </div>
+        
+
+        <div className="nav-login-cart">
+          <Link to='/login'><button type="button" class="btn btn-primary">Login</button></Link>
+          
         </div>
       </div>
     </nav>

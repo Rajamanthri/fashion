@@ -9,6 +9,7 @@ import LoginSignup from './Pages/LoginSignup';
 import Wishlist from './Pages/Wishlist';
 import Footer from './Components/Footer/Footer';
 import Signup from './Pages/Signup';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
