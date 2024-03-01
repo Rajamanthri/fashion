@@ -70,8 +70,8 @@ const Navbar = () => {
         </div>
         
 
-        <div button type="button" class="btn btn-primary">
-          <Link to='/login'><button>Login</button></Link>
+        <div className="nav-login-cart">
+          <Link to='/login'><button type="button" class="btn btn-primary">Login</button></Link>
           
         </div>
       </div>

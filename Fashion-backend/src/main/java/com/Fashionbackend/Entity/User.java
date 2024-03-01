@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
     @Id
+    @GeneratedValue
 
     private int id;
 

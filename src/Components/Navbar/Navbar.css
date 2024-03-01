@@ -1,9 +1,10 @@
 .navbar {
+
     gap: 2%;
     display: flex;
     justify-content: space-around;
+    
     align-items: center;
-    padding: 1% 2%;
     background-color: #bc00ad;
     color: #fff;
   }
@@ -51,7 +52,7 @@
     border: none;
   }
   .nav-menu li a{
-    
+    align-items: center;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -64,9 +65,13 @@
   .nav-actions {
    
     display: flex;
-    
+    align-items: center;
     gap: 2%;
   }
+  
+ 
+  
+
   
   .nav-icons {
     display: flex;
@@ -87,7 +92,7 @@
     align-items: center;
     border-radius: 50%;
     font-size: 1.8vh;
-    
+    background: red;
     color: white;
   }
 
