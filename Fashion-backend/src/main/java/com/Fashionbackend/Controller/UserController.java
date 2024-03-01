@@ -1,6 +1,7 @@
 package com.Fashionbackend.Controller;
 
 import com.Fashionbackend.DTO.UserDTO;
+import com.Fashionbackend.Entity.User;
 import com.Fashionbackend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +20,10 @@ public class UserController {
 
         userService.saveUser(userDTO);
         return "User Saved";
-
-
+    }
+    @PostMapping("/authenticateUsers")
+    public String authenticateUser(@RequestBody UserDTO userDTO){
+        return userService
     }
     @GetMapping("/getUser")
     public List<UserDTO> getUser() {
