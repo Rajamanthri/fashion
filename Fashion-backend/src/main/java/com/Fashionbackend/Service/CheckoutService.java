@@ -3,6 +3,7 @@ package com.Fashionbackend.Service;
 import com.Fashionbackend.DTO.CheckoutDTO;
 import com.Fashionbackend.Entity.Checkout;
 import com.Fashionbackend.Repo.CheckoutRepo;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class CheckoutService {
     @Autowired
     private CheckoutRepo checkoutRepo;
