@@ -14,12 +14,13 @@ import lombok.NoArgsConstructor;
 @Data
 public class User {
     @Id
+    @GeneratedValue
 
     private int id;
 
     private String f_Name;
     private String l_Name;
-
+    private String role;
     private String email;
     private String password;
 }

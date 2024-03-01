@@ -16,6 +16,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class Product {
     @Id
+    @GeneratedValue
+
     private int pid;
 
     private String pname;
