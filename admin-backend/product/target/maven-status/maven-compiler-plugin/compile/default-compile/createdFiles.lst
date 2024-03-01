@@ -1,0 +1,5 @@
+com\ecommerceApp\product\productController.class
+com\ecommerceApp\product\ProductApplication.class
+com\ecommerceApp\product\productService.class
+com\ecommerceApp\product\productRepository.class
+com\ecommerceApp\product\product.class
