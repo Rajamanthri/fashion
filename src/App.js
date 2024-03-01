@@ -1,37 +1,31 @@
 import React from 'react';
-import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Shop from './Pages/Shop';
-import ShopCategory from './Pages/ShopCategory';
-import Product from './Pages/Product';
-import Cart from './Pages/Cart';
-import LoginSignup from './Pages/LoginSignup';
-import Wishlist from './Pages/Wishlist';
-import Footer from './Components/Footer/Footer';
-import Signup from './Pages/Signup';
+import ProductForm from './ProductForm'; // Import ProductForm component
+import './product.css'; // Import product.css for styling
+import axios from 'axios'; // Import Axios library
 
-function App() {
+const App = () => {
+  // Define a function to handle adding a new product
+  const addProduct = (newProduct) => {
+    // Make a POST request to your Spring Boot backend to add the new product
+    axios.post('http://localhost:8080/Ecommerce/product/addnew', newProduct)
+      .then(response => {
+        // Handle success response if needed
+        console.log('Product added successfully:', response.data);
+      })
+      .catch(error => {
+        // Handle error response if needed
+        console.error('Error adding product:', error);
+      });
+  };
+
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Shop />} />
-          <Route path='/men' element={<ShopCategory category="Men" />} />
-          <Route path='/women' element={<ShopCategory category="Women" />} />
-          <Route path='/kids' element={<ShopCategory category="Kids" />} />
-          <Route path='product' element={<Product />}>
-            <Route path='productId' element={<Product />} />
-          </Route>
-          <Route path='/cart' element={<Cart />} />
-          <Route path='/login' element={<LoginSignup />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path='/wishlist' element={<Wishlist />} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <ProductForm addProduct={addProduct} /> {/* Pass the addProduct function as a prop to ProductForm component */}
+      </header>
     </div>
   );
 }
 
 export default App;
+
