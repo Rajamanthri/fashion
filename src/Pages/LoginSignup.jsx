@@ -27,8 +27,21 @@ const LoginSignup = () => {
 
       localStorage.setItem('authToken', token);
 
+      if (response.data.includes("Authenticated user")) {
+        setSignupMessage('Authentication Successfulled');
+        setTimeout(() => {
+          navigate('/Shop');
+        }, 3000);}
+        else{
+          if(response.data.includes("Incorrect Password")){
+            setSignupMessage('Incorrect Password');
+          }
+          else if(response.data.includes("User not registered yet!!!")){
+            setSignupMessage('Register first to login');
+          }
+        }
       
-      navigate('/Shop');
+      
     } catch (error) {
       
       console.error('Login failed', error.message);
@@ -39,6 +52,7 @@ const LoginSignup = () => {
     <div className='loginsignup'>
       <div className="loginsignup-container">
         <h1>Login</h1>
+        {signupMessage && <p className="signup-message">{signupMessage}</p>}
         <div className="loginsignup-fields">
           <input type="email" name="email" placeholder='Email' onChange={handleChange} />
           <input type="password" name="password" placeholder='Password' onChange={handleChange} />
