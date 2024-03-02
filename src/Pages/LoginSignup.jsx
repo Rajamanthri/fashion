@@ -9,6 +9,8 @@ const LoginSignup = () => {
     email: '',
     password: '',
   });
+  
+  const [signupMessage, setSignupMessage] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,7 +19,7 @@ const LoginSignup = () => {
   const handleLogin = async () => {
     try {
 
-      const response = await axios.post('http://localhost:8080/api/v1/user/saveUser', formData);
+      const response = await axios.post('http://localhost:8080/api/v1/user/authenticateUsers', formData);
 
 
       const token = response.data.token;
@@ -55,3 +57,4 @@ const LoginSignup = () => {
 };
 
 export default LoginSignup;
+

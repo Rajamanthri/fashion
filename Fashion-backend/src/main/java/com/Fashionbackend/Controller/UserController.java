@@ -4,6 +4,8 @@ import com.Fashionbackend.DTO.UserDTO;
 import com.Fashionbackend.Entity.User;
 import com.Fashionbackend.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,13 +19,31 @@ public class UserController {
     private UserService userService;
     @PostMapping("/saveUser")
     public String saveUser(@RequestBody UserDTO userDTO) {
+        try {
 
-        userService.saveUser(userDTO);
-        return "User Saved";
+            if (userDTO.getF_Name() == null || userDTO.getF_Name().isEmpty()
+                    || userDTO.getL_Name() == null || userDTO.getL_Name().isEmpty()
+                    || userDTO.getEmail() == null || userDTO.getEmail().isEmpty()
+                    || userDTO.getPassword() == null || userDTO.getPassword().isEmpty()) {
+                return "Please provide all required fields.";
+            }
+
+
+            if (userService.isUserExists(userDTO.getEmail())) {
+                return "User with this email already exists.";
+            }
+
+
+            userService.saveUser(userDTO);
+
+            return "User created successfully.";
+        } catch (Exception e) {
+            return "Error while processing the request.";
+        }
     }
     @PostMapping("/authenticateUsers")
     public String authenticateUser(@RequestBody UserDTO userDTO){
-        return userService
+        return userService.authenticateUser(userDTO);
     }
     @GetMapping("/getUser")
     public List<UserDTO> getUser() {
