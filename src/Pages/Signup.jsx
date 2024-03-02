@@ -12,6 +12,7 @@ const Signup = () => {
     password: '',
     role:'admin',
   });
+  const [signupMessage, setSignupMessage] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,22 +20,36 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      // Make a POST request to your Spring Boot backend endpoint
       const response = await axios.post('http://localhost:8080/api/v1/user/saveUser', formData);
-      
-      // Handle the response as needed (e.g., show a success message, redirect to login)
-      console.log('Signup successful', response.data);
-      navigate('/LoginSignup'); // Redirect to login page after successful signup
+      console.log('Signup response', response.data);
+  
+      if (response.data.includes("User with this email already exists.")) {
+        setSignupMessage('Signup successful! Redirecting to login page...');
+        setTimeout(() => {
+          navigate('/Login');
+        }, 3000);
+      } else {
+        // Display specific error messages based on backend response
+      if (response.data.includes("User created successfully.")) {
+        setSignupMessage("User with this email already exists.");
+      } else if (response.data.includes("Please provide all required fields.")) {
+        setSignupMessage("Please provide all required fields.");
+      } else {
+        
+      }
+      }
     } catch (error) {
-      // Handle errors (e.g., show an error message)
       console.error('Signup failed', error.message);
+      setSignupMessage('An error occurred during signup. Please try again later.');
     }
   };
+  
 
   return (
     <div className="signup">
       <div className="signup-container">
         <h1>Sign Up</h1>
+        {signupMessage && <p className="signup-message">{signupMessage}</p>}
         <div className="signup-fields">
           <input type="text" name="f_Name" placeholder="First Name" onChange={handleChange} />
           <input type="text" name="l_Name" placeholder="Last Name" onChange={handleChange} />
