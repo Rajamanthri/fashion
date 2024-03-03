@@ -1,5 +1,6 @@
 package com.Fashionbackend.Controller;
 
+import com.Fashionbackend.DTO.AuthDTO;
 import com.Fashionbackend.DTO.UserDTO;
 import com.Fashionbackend.Entity.User;
 import com.Fashionbackend.Service.UserService;
@@ -42,7 +43,7 @@ public class UserController {
         }
     }
     @PostMapping("/authenticateUsers")
-    public String authenticateUser(@RequestBody UserDTO userDTO){
+    public AuthDTO authenticateUser(@RequestBody UserDTO userDTO){
         return userService.authenticateUser(userDTO);
     }
     @GetMapping("/getUser")
@@ -54,6 +55,7 @@ public class UserController {
         userService.updateUsers(userDTO);
         return "User Updated";
     }
+
     @DeleteMapping("/deleteUser")
     public String deleteUsers(@RequestBody UserDTO userDTO){
         userService.deleteUsers(userDTO);

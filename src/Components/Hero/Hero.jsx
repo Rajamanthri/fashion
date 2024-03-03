@@ -24,15 +24,17 @@ export default function Hero() {
     addToCart(item);
   };
   return (
-    <div>
+    <div class = "all">
     <div className='hero'>
 
       <div className="hero-left">
         <h2>Welcome to Wow Fashion!</h2>
-       
-        <div className="hero-latest-btn">
-            <div>Latest Collection</div>
-        </div>
+       <div className="left_para">
+       Elevate your style with <span>Wow Fashion</span> – where sophistication meets flair. Explore our curated collection, designed for the modern woman who embraces elegance in every stride. Discover your perfect look today!
+       </div>
+      
+      <Link to='/kids'><button type="button" class="explore">Explore</button></Link>
+     
       </div>
 
       <div className="hero-right">
@@ -41,13 +43,29 @@ export default function Hero() {
       </div>
     </div>
     <div className="populer-item">
+      <div className="populartext">Most Selling</div>
         {shopItems.map((item) => (
-          <div key={item.id} className="item">
-            <img src={family} alt={item.itemName} />
-            <h3>{item.itemName}</h3>
-            <p>${item.price}</p>
-            <button onClick={() => addToCart(item)}>Add to Cart</button>
+          <div className="card">
+            <div key={item.id} className="item">
+            <div className="item-img"><img src={family} alt={item.itemName} /></div>
+            <div className="item-name"><h3>{item.itemName}</h3></div>
+            <div className="item-price"><p>${item.price}</p></div>
+            <button class="item-btn" onClick={() => addToCart(item)}>Add to Cart</button>
           </div>
+          <div key={item.id} className="item">
+            <div className="item-img"><img src={family} alt={item.itemName} /></div>
+            <div className="item-name"><h3>{item.itemName}</h3></div>
+            <div className="item-price"><p>${item.price}</p></div>
+            <button class="item-btn" onClick={() => addToCart(item)}>Add to Cart</button>
+          </div>
+          <div key={item.id} className="item">
+            <div className="item-img"><img src={family} alt={item.itemName} /></div>
+            <div className="item-name"><h3>{item.itemName}</h3></div>
+            <div className="item-price"><p>${item.price}</p></div>
+            <button class="item-btn" onClick={() => addToCart(item)}>Add to Cart</button>
+          </div>
+          </div>
+          
         ))}
       </div>
     </div>

@@ -1,9 +1,5 @@
 package com.Fashionbackend.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-
 import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -17,17 +13,17 @@ import lombok.NoArgsConstructor;
 public class Product {
     @Id
     @GeneratedValue
+    private int id;
+    private String name;
 
-    private int pid;
+    private int quantity;
 
-    private String pname;
+    private String description;
 
-    private int pstock;
+    private double price;
 
-    private long pprize;
+    private String category;
 
-    private String ptype;
-
-    private String pimg;
+    private String Image;
 
 }

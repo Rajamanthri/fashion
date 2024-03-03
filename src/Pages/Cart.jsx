@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Cart.css';
 
 export default function Cart() {
-  // Dummy cart data for example
+ 
   const [cartItems, setCartItems] = useState([
     { id: 1, name: 'Product 1', price: 20, quantity: 2 },
     { id: 2, name: 'Product 2', price: 30, quantity: 1 },
-    // Add more items as needed
+    
   ]);
 
   const removeItem = (itemId) => {
@@ -26,7 +26,8 @@ export default function Cart() {
   };
 
   return (
-    <div>
+    <div class ="cart">
+      
       <h1>Your Shopping Cart</h1>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
@@ -49,9 +50,9 @@ export default function Cart() {
       )}
 
       {cartItems.length > 0 && (
-        <div>
-          <h2>Total: ${calculateTotal()}</h2>
-          <button>Checkout</button>
+        <div class ="end">
+          <h2 class="total">Total: ${calculateTotal()}</h2>
+          <button class ="checkout-btn">Checkout</button>
         </div>
       )}
     </div>

@@ -1,10 +1,11 @@
 package com.Fashionbackend.DTO;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 
 @NoArgsConstructor
@@ -12,16 +13,20 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductDTO {
     @Id
-    private int pid;
+    @GeneratedValue
+    private int id;
+    private String name;
 
-    private String pname;
+    private int quantity;
 
-    private int pstock;
+    private String description;
 
-    private long pprize;
+    private double price;
 
-    private String ptype;
+    private String category;
 
-    private String pimg;
+    private String Image;
 
 }
+
+

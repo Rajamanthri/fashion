@@ -1,0 +1,107 @@
+.product-container h3{
+text-align: center;
+font-weight: bold;
+font-size: 5vh;
+margin: 2% 0%;
+}
+.add-product-form {
+    background: #fff;
+    border: var(--border);
+    border-radius: 10px;
+    width: 100%;
+    padding: 2rem;
+    margin: 2rem;
+}
+form {
+    display: block;
+}
+.product-container form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+}
+.indiv {
+    width: 50%;
+    float: left;
+    padding: 5px;
+    margin:  0% 20%;
+}
+.indiv label{
+    justify-content: center;
+}
+.product-container form span {
+    display: flex;
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+.product-container form .box {
+    width: 100%;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    border: var(--border);
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    text-transform: none;
+}
+.product-container form .btn {
+    text-align: center;
+    width: 50%;
+    margin: 1.5rem 0;
+    margin-left: 25%;
+    /* margin-top: 10%; */
+}
+section {
+    padding: 2.5rem .9%;
+}
+
+.display-product-table table {
+    width: 100%;
+    text-align: center;
+}
+
+.edit-form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    background-color: var(--dark-bg);
+    padding: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.option-btn {
+    background-color: var(--green);
+}
+
+.option-btn,
+.delete-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.indiv input{
+    width: 100%;
+    box-shadow: 0 0 7px rgba(188, 1, 169, 0.248);
+    border: 1px dashed rgb(188, 1, 169);
+}
+.box{
+    width: 100%;
+    padding: 0% 2%;
+    box-shadow: 0 0 7px rgba(188, 1, 169, 0.248); 
+    border: 1px dashed rgb(188, 1, 169);
+}
+.btn{
+    margin: 0%;
+}

@@ -15,23 +15,32 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
     @GetMapping("/getProduct")
-    public List<ProductDTO> getProduct(){
+    public List<ProductDTO> getProduct() {
         return productService.getallProducts();
     }
+
     @PostMapping("/saveProduct")
-    public String saveProduct(@RequestBody ProductDTO productDTO){
+    public String saveProduct(@RequestBody ProductDTO productDTO) {
         productService.saveProduct(productDTO);
         return "Product saved";
     }
+
     @PutMapping("/updateProduct")
-    public String updateProduct(@RequestBody ProductDTO productDTO){
+    public String updateProduct(@RequestBody ProductDTO productDTO) {
         productService.updateProduct(productDTO);
         return "Product updated";
     }
+
     @DeleteMapping("/deleteProduct")
-    public String deleteProduct(@RequestBody ProductDTO productDTO){
+    public String deleteProduct(@RequestBody ProductDTO productDTO) {
         productService.deleteProduct(productDTO);
         return "deleted successfully";
+    }
+
+    @GetMapping("/searchProduct")
+    public List<ProductDTO> searchProduct(@RequestParam String keyword) {
+        return productService.searchProduct(keyword);
     }
 }
