@@ -1,36 +1,53 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import cart from '../Assets/cart.png'
-import wishlist from '../Assets/wishlist.png'
+
+import React from 'react';
+import './Navbar.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-export default function Navbar() {
 
-    const [menu,setMenu] = useState("shop");
+const Navbar = () => {
 
+  let role = localStorage.getItem("authToken");
   return (
-    <div className='navbar'>
-      <div className='nav-logo'>
-        {/* <img src={logo} alt="" /> */}
-        <p>Wow Fashoin</p>
+    <nav className="navbar">
+      <div className="nav-logo">
+        <Link to="/">Wow Fashion</Link>
       </div>
-      <ul className='nav-menu'>
-        <li onClick={()=>{setMenu("shop")}}><Link style={{textDecoration: 'none'}} to='/'>Shop</Link>{menu==="shop"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("men")}}><Link style={{textDecoration: 'none'}} to='/men'>Men</Link>{menu==="men"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("women")}}><Link style={{textDecoration: 'none'}} to='/women'>Women</Link>{menu==="women"?<hr/>:<></>}</li>
-        <li onClick={()=>{setMenu("kids")}}><Link style={{textDecoration: 'none'}} to='/kids'>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
+      <div className="nav-search">
+        <form onSubmit={handleSearchSubmit}> {/* Attach handleSearchSubmit function to form onSubmit event */}
+          <input type="text" placeholder="Search" value={searchTerm} onChange={handleSearchInputChange} />
+          <button type="submit"><FontAwesomeIcon icon={faSearch} /></button> {/* Use submit button to trigger form submission */}
+        </form>
+      </div>
+      <ul className="nav-menu">
+        <li><Link to="/kids">ALL</Link></li>
+        <li><Link to="/men">Frock</Link></li>
+        <li><Link to="/women">Sarees</Link></li>
+        {role === "admin" ? (
+          <li><Link to="/women">Addproduct</Link></li>
+        ) : (
+          null
+        )}
+
       </ul>
 
-      <div className="wishlist">
-        <Link to='/wishlist'><img src={wishlist} alt="" /></Link>
-        <div className="wishlist-count">0</div>
-      </div>
+      <div className="nav-actions">
 
-      <div className="nav-login-cart">
-        <Link to='/login'><button>Login</button></Link>
-        <Link to='/cart'><img src={cart} alt="" /></Link>
-        <div className="nav-cart-count">0</div>
+        <div className="cart-icon-container">
+          <div className="cart"><Link to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></Link></div>
+          <div className="nav-cart-count">0</div>
+        </div>
+
+
+
+        <div className="nav-login">
+          <Link to='/login'><button type="button" class="login">Login</button></Link>
+
+        </div>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
+
+export default Navbar;

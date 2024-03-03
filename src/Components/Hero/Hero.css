@@ -1,3 +1,12 @@
+.madimi-one-regular {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.all{
+  background: linear-gradient(180deg,#f082f8, #e1ffea22 80%);
+}
 .hero {
     display: flex;
     /* justify-content: space-between; */
@@ -5,13 +14,13 @@
     padding: 20px;
     /* background-color: #f7f7f7; */
     height: 100vh;
-    background: linear-gradient(180deg,#f082f8, #e1ffea22 80%);
+    
   }
   
   .hero-left {
     flex: 1;
-    padding-right: 20px;
-    padding-left: 180px;
+    padding-right: 1%;
+    padding-left: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,57 +29,37 @@
   }
   
   .hero-left h2 {
-    font-size: 32px;
-    margin-bottom: 16px;
-    color: #333;
+    font-size: 8vh;
+    margin-bottom: 2%;
+    color: #ffffff;
     font-weight: 600;
+    font-family: "Madimi One", sans-serif;
   }
-
-  .hero-left p {
-    font-size: 30px;
-    margin-bottom: 16px;
-    color: #333;
-    font-weight: 700;
+  .left_para{
+     width: 95%;
+     font-size: 2.6vh;
   }
-  
+  .left_para 
   .hero-left div {
     display: flex;
     align-items: center;
   }
   
-  .hero-hand-icon {
-    /* width: 40px; */
-    /* height: 40px; */
-    background-color: #e74c3c;
-    /* color: #fff; */
-    border-radius: 20%;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    /* font-weight: bold; */
-    margin: 10px;
-    gap:20px;
+  .explore{
+   margin-left: 30%;
+   padding:2% 12% ;
+   font-weight: bold;
+color:#ee00ff ;
+   border: 1px solid #ee00ff;
+   background-color: #f7cbfa;
+   
   }
   
-  .hero-latest-btn {
-    background: #3498db;
-    color: #fff;
-    /* padding: 10px 20px; */
-    border-radius: 75px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 310px;
-    height: 70px;
-    margin-top: 30px;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  
-  .hero-latest-btn div:hover {
-    background-color: #2980b9;
+  .explore:hover {
+    color: white;
+    background-color: #ee00ff;
+    border: 1px solid transparent;
+    transition: 1s all ease-out;
   }
 
   .hero-right{
@@ -79,11 +68,31 @@
     align-items: center;
     justify-content: center;
   }
-/*   
-  .hero-right img {
-    width: 100%;
-    height: auto;
-  } */
 
-  
+  .hero-right img {
+    width: 50%;
+    height: auto;
+  } 
+  .populer-item{
+    justify-content: center;
+  }
+  .populartext
+  {
+    font-size: 10vh;
+    text-align: center;
+  }
+
+  .card{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .item
+  {
+    width:30%;
+    height: 6%;
+  }
+  .item-img img{
+    width: 50%;
+    width: 50%;
+  }
   
