@@ -1,5 +1,6 @@
 package com.Fashionbackend.Entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,4 +21,5 @@ public class Order {
     private String color;
     private String size;
     private int quantity;
+
 }
