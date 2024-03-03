@@ -10,6 +10,7 @@ import Wishlist from './Pages/Wishlist';
 import Footer from './Components/Footer/Footer';
 import Signup from './Pages/Signup';
 
+
 function App() {
   return (
     <div>
