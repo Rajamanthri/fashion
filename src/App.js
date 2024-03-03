@@ -9,6 +9,7 @@ import LoginSignup from './Pages/LoginSignup';
 import Wishlist from './Pages/Wishlist';
 import Footer from './Components/Footer/Footer';
 import Signup from './Pages/Signup';
+import CheckoutComponent from './Pages/checkout';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         </Routes>
         <Footer/>
       </BrowserRouter>
+      <CheckoutComponent />
     </div>
   );
 }
