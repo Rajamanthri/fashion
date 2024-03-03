@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './CSS/LoSi.css';
 
+
+
 const LoginSignup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -19,18 +21,24 @@ const LoginSignup = () => {
   const handleLogin = async () => {
     try {
 
+
       const response = await axios.post('http://localhost:8080/api/v1/user/authenticateUsers', formData);
 
 
       const token = response.data.token;
 
 
-      localStorage.setItem('authToken', token);
 
-      if (response.data.includes("Authenticated user")) {
+      
+
+      if (response.data.status.includes("Authenticated user")) {
         setSignupMessage('Authentication Successfulled');
+ 
+        
+    
+        
         setTimeout(() => {
-          navigate('/Shop');
+          navigate('/');
         }, 3000);}
         else{
           if(response.data.includes("Incorrect Password")){
@@ -42,6 +50,7 @@ const LoginSignup = () => {
         }
       
       
+
     } catch (error) {
       
       console.error('Login failed', error.message);

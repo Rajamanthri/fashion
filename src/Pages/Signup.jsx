@@ -10,7 +10,7 @@ const Signup = () => {
     l_Name: '',
     email: '',
     password: '',
-    role:'admin',
+    role:'user',
   });
   const [signupMessage, setSignupMessage] = useState(null);
 
