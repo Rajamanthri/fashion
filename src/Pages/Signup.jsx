@@ -10,7 +10,7 @@ const Signup = () => {
     l_Name: '',
     email: '',
     password: '',
-    role:'admin',
+    role:'user',
   });
   const [signupMessage, setSignupMessage] = useState(null);
 
@@ -23,7 +23,7 @@ const Signup = () => {
       const response = await axios.post('http://localhost:8080/api/v1/user/saveUser', formData);
       console.log('Signup response', response.data);
   
-      if (response.data.includes("User with this email already exists.")) {
+      if (response.data.includes("User created successfully.")) {
         setSignupMessage('Signup successful! Redirecting to login page...');
         setTimeout(() => {
           navigate('/Login');

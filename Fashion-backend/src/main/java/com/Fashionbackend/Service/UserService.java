@@ -1,5 +1,6 @@
 package com.Fashionbackend.Service;
 
+import com.Fashionbackend.DTO.AuthDTO;
 import com.Fashionbackend.DTO.UserDTO;
 import com.Fashionbackend.Entity.User;
 import com.Fashionbackend.Repo.UserRepo;
@@ -27,33 +28,46 @@ public class UserService {
 
     public UserDTO saveUser(UserDTO userDTO) {
         String encryptedPassword =  passwordEncoder.encode(userDTO.getPassword());
-        User user = User.builder()
-                .f_Name(userDTO.getF_Name())
-                .l_Name(userDTO.getL_Name())
-                .email(userDTO.getEmail())
-                .password(encryptedPassword)
-                .role(userDTO.getRole())
-                .build();
+        User user = new User();
+        user.setF_Name(userDTO.getF_Name());
+        user.setL_Name(userDTO.getL_Name());
+        user.setEmail(userDTO.getEmail());
+        user.setPassword(encryptedPassword);
+        user.setRole(userDTO.getRole());
+
         userRepo.save(user);
+
         return userDTO;
+
     }
     public boolean isUserExists(String email) {
         return userRepo.existsByEmail(email);
     }
 
-    public String authenticateUser(UserDTO userDTO){
+    public AuthDTO authenticateUser(UserDTO userDTO){
 
         Optional<User> opUser = userRepo.findByEmail(userDTO.getEmail());
         BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+        AuthDTO authDTO = new AuthDTO();
         if (opUser.isPresent()){
             User dbuser = opUser.get();
             if(bcrypt.matches(userDTO.getPassword(),dbuser.getPassword())){
-                return "Authenticated user";
+                //return "Authenticated user";
+                  authDTO.setRole((dbuser.getRole()));
+                  authDTO.setEmail(dbuser.getEmail());
+        authDTO.setStatus("Authenticated user");
+        return authDTO;
             }else{
-                return "Incorrect Password";
+                // return "Incorrect Password";
+
+        authDTO.setStatus("Incorrect Password");
+        return authDTO;
             }
         }else{
-            return "User not registered yet!!!";
+           // return "User not registered yet!!!";
+            
+    authDTO.setStatus("User not registered yet!!!");
+    return authDTO;
         }
 
     }
