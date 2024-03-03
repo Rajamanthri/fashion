@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Cart.css';
 
 export default function Cart() {
-  // Dummy cart data for example
+ 
   const [cartItems, setCartItems] = useState([
     { id: 1, name: 'Product 1', price: 20, quantity: 2 },
     { id: 2, name: 'Product 2', price: 30, quantity: 1 },
-    // Add more items as needed
+    
   ]);
 
   const removeItem = (itemId) => {
