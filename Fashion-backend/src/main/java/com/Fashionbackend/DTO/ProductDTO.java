@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductDTO {
     @Id
-    private int productId;
+    private int pid;
 
     private String pname;
 
