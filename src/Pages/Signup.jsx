@@ -31,7 +31,7 @@ const Signup = () => {
       } else {
         // Display specific error messages based on backend response
       if (response.data.includes("User created successfully.")) {
-        setSignupMessage("User with this email already exists.");
+        setSignupMessage("Successfully Registerd! Please Log in");
       } else if (response.data.includes("Please provide all required fields.")) {
         setSignupMessage("Please provide all required fields.");
       } else {
