@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ChechoutDTO {
+public class CheckoutDTO {
     @Id
     private int Cid;
     private String address;
