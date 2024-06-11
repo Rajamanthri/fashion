@@ -1,23 +1,33 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-
 const Navbar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    // Placeholder logic for handling search submission
+    console.log(`Search term submitted: ${searchTerm}`);
+  };
 
   let role = localStorage.getItem("authToken");
+
   return (
     <nav className="navbar">
       <div className="nav-logo">
         <Link to="/">Wow Fashion</Link>
       </div>
       <div className="nav-search">
-        <form onSubmit={handleSearchSubmit}> {/* Attach handleSearchSubmit function to form onSubmit event */}
+        <form onSubmit={handleSearchSubmit}>
           <input type="text" placeholder="Search" value={searchTerm} onChange={handleSearchInputChange} />
-          <button type="submit"><FontAwesomeIcon icon={faSearch} /></button> {/* Use submit button to trigger form submission */}
+          <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
         </form>
       </div>
       <ul className="nav-menu">
@@ -29,21 +39,14 @@ const Navbar = () => {
         ) : (
           null
         )}
-
       </ul>
-
       <div className="nav-actions">
-
         <div className="cart-icon-container">
           <div className="cart"><Link to='/cart'><FontAwesomeIcon icon={faShoppingCart} /></Link></div>
           <div className="nav-cart-count">0</div>
         </div>
-
-
-
         <div className="nav-login">
-          <Link to='/login'><button type="button" class="login">Login</button></Link>
-
+          <Link to='/signup'><button type="button" className="login">Register</button></Link>
         </div>
       </div>
     </nav>

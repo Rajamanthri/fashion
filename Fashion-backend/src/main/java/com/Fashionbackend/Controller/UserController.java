@@ -55,7 +55,6 @@ public class UserController {
         userService.updateUsers(userDTO);
         return "User Updated";
     }
-
     @DeleteMapping("/deleteUser")
     public String deleteUsers(@RequestBody UserDTO userDTO){
         userService.deleteUsers(userDTO);
